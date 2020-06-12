@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       msg: "menu",
-      menuArray: ["content", "chart"]
+      menuArray: ["content","content2", "chart"]
     };
   },
   methods: {

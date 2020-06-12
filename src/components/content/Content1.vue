@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import selectData from '../common/selectData'
+import selectData from '@/components/common/selectData'
 export default {
   name: "Content1",
   data() {

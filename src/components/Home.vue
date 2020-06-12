@@ -8,7 +8,7 @@
           <LeftMenu @menuChange="menuChange"></LeftMenu>
         </div>
         <div class="rightContent">
-         <Content v-show="contentName=='content'"></Content>
+         <Content v-show="contentName=='content'" :page=contentName></Content>
          <chart v-show="contentName=='chart'"></chart>
         </div>
       </div>

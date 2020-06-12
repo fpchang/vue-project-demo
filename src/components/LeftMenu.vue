@@ -1,12 +1,12 @@
 <template>
   <div class="left-menu">
-    <!--
+
       
     <h1>{{ msg }}</h1>
       <ul>
         <li v-for="(value) in menuArray" v-on:click="getPage(value)" :key="value">{{value}}</li>
       </ul>
-    -->
+  
     <el-col :span="24">
       <el-menu
         default-active="2"

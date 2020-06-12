@@ -5,7 +5,7 @@
       <div class="content">
         <div class="leftmenu">
           <!-- @menuChange="menuChange 监控子组件像父组件发送数据  -->
-          <LeftMenu @menuChange="menuChange" :msg="msg"></LeftMenu>
+          <LeftMenu @menuChange="menuChange"></LeftMenu>
         </div>
         <div class="rightContent">
          <Content v-show="contentName=='content'"></Content>
@@ -36,6 +36,7 @@ export default {
   },
   methods:{
     menuChange(name){
+      alert(name)
       this.contentName=name;
     }
   }

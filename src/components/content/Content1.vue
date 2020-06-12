@@ -1,51 +1,40 @@
 <template>
-  <div class="hello">
-    <el-row :gutter="20">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
+  <div class="con">
+    <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="30%">
+      <div>
+        <selectData @callbackData="getSelectData" :params=sendValue></selectData>
+      </div>
+    </el-dialog>
+    <div>{{getSelectValue}}</div>
   </div>
 </template>
 
 <script>
+import selectData from '../common/selectData'
 export default {
-  name: 'Content1',
-  data () {
+  name: "Content1",
+  data() {
     return {
-      msg: 'Welcome to content1'
+      msg: "Welcome to content1",
+       dialogVisible: false,
+       sendValue:"request--888",
+       getSelectValue:""
+    };
+  },
+  components:{
+    selectData:selectData
+  },
+  methods:{
+    getSelectData(value){
+      alert(value)
+      this.dialogVisible=false;
     }
+    
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  .el-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .el-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
 </style>
